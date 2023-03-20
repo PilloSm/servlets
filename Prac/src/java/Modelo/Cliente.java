@@ -11,7 +11,7 @@ public class Cliente {
     String nombre;
     double telefono;
     String correo;
-    String lineaC, linea;
+    String lineaC, linea, respuesta;
     ArrayList<Producto> lista=new ArrayList();
     ArrayList<ProductoC> listaCompra=new ArrayList();
     ArrayList clientes=new ArrayList();
@@ -85,43 +85,24 @@ public class Cliente {
     clientes.add(cli);
 
     }
-    public void comprar(String nombre, int unidades){
+    public String comprar(String nombre, int unidades){
     while (objIterador.hasNext()){
         pro=objIterador.next();
         if (nombre.equals(pro.getNombre()))
             {
             if (pro.getExistencia()<unidades){
                 break;
+                respuesta="No hay suficientes"
                 }
                 else{
                 float precio=pro.getPrecio();
                 pro.setExistencias(pro.getExistencia()-unidades);
                 proc=new ProductoC(nombre, precio, unidades);
                 listaCompra.add(proc);
+                respuesta="Se ha realizado tu compra"+nombre+unidades;
                 }
             } 
         }
+        return respuesta;
     }    
-    public String escribirC()
-    {
-        while (objItC.hasNext()){
-            proc=objItC.next();
-            lineaC+=proc.toString()+"<br>";
-        }
-    return this.lineaC;
-    }
-    public String escribir()
-    {
-        while (objIterador.hasNext()){
-            pro=objIterador.next();
-            linea+=proc.toString()+"<br>";
-            System.out.println(linea);
-        }
-    return this.linea;
-    }
-    public void venta(String nombre, int unidades){
-    while (objIterador.hasNext()){
-        
-        }
-    }
 }
