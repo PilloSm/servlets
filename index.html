@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>No cheque el back xfa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <h1>Registrar Cliente</h1>
+    <form action="SvCliente" method="post">
+        <label>Nombre: </label>
+        <input type="text" name="nombre" minlength="2" maxlength="15" pattern="^[a-zA-Z]+$" required>
+        <br>
+        <label>Telefono: </label>
+        <input type="text" name="telefono" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
+        <br>
+        <label>Correo: </label>
+        <input type="email" name="correo" minlength="11" required>
+        <br>
+        <input type="submit" value="registar">
+    </form>
+
+    <h1>Registrar producto</h1>
+    <form action="SvProducto" method="post">
+        <label>Nombre del producto: </label>
+        <input type="text" name="nombre" minlength="2" maxlength="15" pattern="^[a-zA-Z]+$" required>
+        <br>
+        <label>Precio del producto: </label>
+        <input type="text" name="precio" minlength="1" pattern="^[0-9]+$" required>
+        <br>
+        <label>Existencia del producto: </label>
+        <input type="text" name="existencia" minlength="1" pattern="^[0-9]+$" required>
+        <br>
+        <button>Registrar Producto</button>
+    </form>
+
+    <h1>Comprar producto</h1>
+    <form action="SvCompra" method="post">
+        <label>Nombre del producto: </label>
+        <input type="text" name="nombre" minlength="2" maxlength="15" pattern="^[a-zA-Z]+$" required>
+        <br>
+        <label>Cantidad: </label>
+        <input type="text" name="cantidad" minlength="1"  pattern="^[0-9]+$" required>
+        <br>
+        <button>Comprar</button>
+    </form>
+
+
+
+    <h1>Vender</h1>
+
+    <form action="SvVenta" method="post">
+        <label>Nombre del producto: </label>
+        <input type="text" name="nombre" minlength="2" maxlength="15" pattern="^[a-zA-Z]+$" required>
+        <br>
+        <label>Cantidad: </label>
+        <input type="text" name="cantidad" minlength="1"  pattern="^[0-9]+$" required>
+        <br>
+        <button>Vender</button>
+    </form>
+    </body>
+</html>
